@@ -1,0 +1,93 @@
+---
+layout: '../layouts/Layout.astro'
+title: 'Getting There'
+active: 'getting-there'
+---
+import Prose from '../components/Prose.astro'
+import PurpleRing from '../assets/Raspberry-Ring.png'
+import PinkLine from '../assets/Pink-Line.png'
+import PaperAeroplane from '../assets/Paper-Aeroplane.png'
+
+<Prose class="prose-h1:bg-purple prose-a:text-pink -mt-8 relative">
+
+<div class="flex flex-row gap-12">
+<div class="relative w-1/2">
+<iframe class="absolute -top-10 left-0 w-96 h-72" src="https://www.openstreetmap.org/export/embed.html?bbox=-1.899942755699158%2C53.675618544198855%2C-1.8932533264160158%2C53.67904390690464&amp;layer=mapnik&amp;marker=53.677334470324844%2C-1.8965953588485718"></iframe><br/>
+<span class="absolute top-0 -left-4">
+# Getting There
+</span>
+
+</div>
+<div class="prose-h2:text-yellow prose-p:text-pink prose-a:text-pink prose-p:font-medium">
+## The address
+
+The Venue, Bowers Mill  
+Branch Rd   
+Barkisland  
+Halifax   
+HX4 0AD  
+United Kingdom  
+
+## What3words 
+
+<a href="https://what3words.com/award.words.rather" target="_blank" rel="noopener noreferrer">///award.words.rather</a>
+</div>
+</div>
+
+
+<div class="prose-h2:text-purple prose-p:text-purple w-full">
+  <div class="relative overflow-visible mb-12 w-full">
+  <img src={PurpleRing.src} alt="Purple ring" class="absolute -left-4 -top-20 scale-20 origin-top-left" />
+  <img src={PinkLine.src} alt="Pink line" class="absolute -left-4 -top-20 scale-60 origin-top-left" />
+  <img src={PaperAeroplane.src} alt="Paper aeroplane" class="absolute -right-4 -top-30 scale-20 origin-top-left" />
+    ## By train
+  </div>
+
+Halifax Station is helpfully very close to the venue. You can get a direct train there from London King’s Cross; it takes about 2.5 hours. For tickets, <a href="https://www.thetrainline.com" target="_blank" rel="noopener noreferrer">click here</a>.
+
+Once you’re at the station, the easiest thing is to order a taxi: some options are Best Taxis or Crossley Cars, but Uber works here too. It’s about 15 minutes to the venue.
+
+</div>
+
+<span class="prose-h2:text-pink prose-p:text-pink">
+## By car
+
+For those driving, the best way to get here is via the M62: 
+•	Exit at Junction 24 for Halifax/Huddersfield.
+•	Follow signs for Halifax, then Barkisland.
+•	The Venue is located on Branch Road, with parking available on-site.
+</span>
+
+<span class="prose-h2:text-blue prose-p:text-blue">
+## If you’re flying
+
+We’re so grateful to our international guests who are making the journey to see us. We want you to feel your best on the day, so if possible, we’d suggest arriving 1-2 days before to settle in. 
+
+The closest airport is Manchester Airport (MAN), which is about an hour’s drive away.  You can also take the train from Manchester Airport to Halifax, then grab a taxi from the station (see “by train” above).
+
+If you’re flying into London, it’s a bit more of a headache as you’ll need to get into central London, then out again. Here’s some guidance on how to make it as simple as possible.
+
+<span class="prose-h3:text-purple">
+### From Gatwick
+</span>
+
+Look for the Thameslink Railway service heading north, which will take you to St Pancras Station. These trains come very frequently, at least every 10 minutes. You can buy tickets if you want, but if you have contactless on your phone or credit/debit card you can also just tap in and out at the turnstiles. (Don’t take the Gatwick Express—it will take you to another part of London and you’ll have to catch the Tube from there.) You’ll be on the Thameslink for about an hour.
+
+Get off at St Pancras, grab a snack if you want, then leave the station and go across the street to King’s Cross station (they are next to each other but not in the same building). This is where you’ll catch the train to Halifax (see “by train” above).
+
+<span class="prose-h3:text-aqua">
+### From Heathrow
+</span>
+
+Take the Piccadilly Line from the airport to King’s Cross St Pancras. This should take about an hour. From there, you can catch your train to Halifax (see “by train” above). 
+
+<span class="prose-h3:text-yellow">
+### From Stansted
+</span>
+
+Don’t go into London at all. Instead, take the CrossCountry Railway service north to Peterborough, which takes about 90 minutes. At Peterborough you can then catch a train to Halifax. (Grand Central Railway does run some direct trains between Halifax and Peterborough, so it’s a good idea to look for those, but most of the time you’ll have to change at Leeds.)
+
+**A general note on trains in the UK:** this country has a very good and well-connected train system, and you can book most tickets on <a href="https://www.thetrainline.com" target="_blank" rel="noopener noreferrer">TheTrainline.com</a>. Prices tend to be transparent and consistent, but definitely go up closer to the date. If you know you need to take a train, it’s a good idea to book your tickets about a month in advance. If you’d like some help planning your journey, just drop us a line!
+</span>
+
+</Prose>

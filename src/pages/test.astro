@@ -1,0 +1,23 @@
+---
+import LogoSVG from '../assets/joshandeve.svg';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout frontmatter={{ title: 'Test', active: 'test' }}>
+  <LogoSVG class="draw-animation"/>
+  <style>
+    :global(.draw-animation) {
+     stroke-dasharray: 1050;  /* Adjust this value based on your path length */
+     stroke-dashoffset: 1050;
+     animation: drawLine 5s linear forwards;
+   }
+
+ @keyframes drawLine {
+   to {
+     stroke-dashoffset: 0;
+   }
+ }
+</style>
+</Layout>
+
+

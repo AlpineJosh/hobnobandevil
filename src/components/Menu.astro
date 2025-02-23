@@ -1,0 +1,124 @@
+---
+interface Props {
+	active: "home" | "getting-there" | "sleeping" | "faq" | "quiz" | "rsvp";
+}
+
+const { active } = Astro.props;
+---
+
+<div class="z-10">
+  <button
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="main-menu"
+    id="menu-button"
+    class="relative md:hidden z-50"
+  >
+    <svg 
+      viewBox="0 0 24 24" 
+      class="size-12 overflow-visible"
+    >
+      <rect 
+        y="4" 
+        width="24" 
+        height="2" 
+        transform-origin="12 5"
+        class="transition-transform duration-300 ease-in-out fill-yellow" 
+      />
+      <rect 
+        y="11" 
+        width="24" 
+        height="2" 
+        transform-origin="12 12"
+        class="transition-transform duration-300 ease-in-out fill-pink" 
+      />
+      <rect 
+        y="18" 
+        width="24" 
+        height="2" 
+        transform-origin="12 19"
+        class="transition-transform duration-300 ease-in-out fill-blue" 
+      />
+    </svg>
+  </button>
+ 
+  <div
+    id="main-menu"
+    class="z-30 fixed inset-0 starting:bg-white/0 h-screen w-screen md:hidden hidden duration-300" 
+  >
+    <nav id="menu-content" class="bg-purple h-full w-[calc(100vw-6rem)] px-12 py-32 starting:-translate-x-full transition-transform duration-300">
+      <ul class="flex-col space-y-10 text-2xl font-semibold text-white">
+        <li><a href="/">The Wedding</a></li>
+        <li><a href="/getting-there">Getting There</a></li>
+        <li><a href="/sleeping">Sleeping</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/quiz">A Quiz</a></li>
+        <li><a href="/rsvp">RSVP</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Desktop menu -->
+  <nav class="hidden md:block">
+    <ul class="flex flex-row space-x-6 text-2xl font-semibold">
+      <li><a href="/" class={`md:text-aqua md:hover:underlined ${active === "home" ? "md:underlined" : ""}`}>The Wedding</a></li>
+      <li><a href="/getting-there" class={`md:text-blue md:hover:underlined ${active === "getting-there" ? "md:underlined" : ""}`}>Getting There</a></li>
+      <li><a href="/sleeping" class={`md:text-purple md:hover:underlined ${active === "sleeping" ? "md:underlined" : ""}`}>Sleeping</a></li>
+      <li><a href="/faq" class={`md:text-pink md:hover:underlined ${active === "faq" ? "md:underlined" : ""}`}>FAQs</a></li>
+      <li><a href="/quiz" class={`md:text-yellow md:hover:underlined ${active === "quiz" ? "md:underlined" : ""}`}>A Quiz</a></li>
+      <li><a href="/rsvp" class={`md:text-aqua md:hover:underlined ${active === "rsvp" ? "md:underlined" : ""}`}>RSVP</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const menuButton = document.getElementById('menu-button');
+  const menu = document.getElementById('main-menu');
+  const menuContent = document.getElementById('menu-content');
+  const rects = menuButton?.querySelectorAll('rect');
+
+  function setMenuOpen(isOpen: boolean) {
+    if (!menuButton || !rects || !menu || !menuContent) return;
+    
+    menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+
+      menu.classList.remove('hidden', 'bg-white/0');
+      menu.classList.add('bg-white/100');
+      menuContent.classList.remove('hidden');
+      menuContent.classList.add('translate-x-0');
+
+      rects[0].classList.add('rotate-45', 'translate-y-[3.5px]');
+      rects[1].classList.add('-rotate-45', '-translate-y-[3.5px]');
+      rects[2].classList.add('translate-y-1');
+    } else {
+      menu.classList.remove('bg-white/100');
+      menu.classList.add('bg-white/0');
+      menuContent.classList.remove('translate-x-0');
+      menuContent.classList.add('-translate-x-full');
+      setTimeout(() => {
+        menu.classList.add('hidden');
+        menuContent.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }, 300); // Match the transition duration
+      rects[0].classList.remove('rotate-45', 'translate-y-[3.5px]');
+      rects[1].classList.remove('-rotate-45', '-translate-y-[3.5px]');
+      rects[2].classList.remove('translate-y-1');
+    }
+  }
+
+
+  menuButton?.addEventListener('click', () => {
+    setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+  });
+
+  menu?.addEventListener('click', () => {
+    setMenuOpen(false);
+  });
+
+  menuContent?.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+</script>

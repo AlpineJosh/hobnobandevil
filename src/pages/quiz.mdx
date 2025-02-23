@@ -1,0 +1,83 @@
+---
+layout: '../layouts/Layout.astro'
+title: 'A Quiz'
+active: 'quiz'
+---
+import Prose from '../components/Prose.astro'
+import Question from '../components/Question.astro'
+
+<Prose class="prose-h1:bg-pink prose-h2:text-purple">
+# A Quiz
+
+## How well do you know Josh and Eve?
+
+## Test your knowledge.
+
+<Question
+  question="Where did Josh and Eve meet?"
+  options={["At the gym", "At a restaurant", "Online", "While skydiving"]}
+  answer={1}
+  explanation="This is kind of an unfair question because we met at a party hosted at a restaurant by the gym we both go to. So in a way, we met at the gym—but technically it was still a restaurant."
+/>
+
+<Question
+  question="Who is 'baby angel'?"
+  options={[
+    "One of Eve's cats",
+    "Josh when he's done something nice",
+    "A creature called a potto",
+    "Eve's sister Darcie"
+  ]}
+  answer={0}
+  explanation="Josh and Eve have three pets: Tilly the Australian Shepherd, and Disaster and Calamity, both Ragdoll cats. Tilly goes by 'Princess', Calamity is 'baby angel', and Disaster is 'asshole' (because he is one)."
+/>
+
+<Question
+  question="How did Josh propose to Eve?"
+  options={[
+    "During a boat cruise on the Thames",
+    "Over oatmeal while she was half asleep",
+    "While riding a fat pony",
+    "After a 17-course meal at a restaurant in Hounslow"
+  ]}
+  answer={1}
+  explanation="Josh had been planning his proposal as a part of a getaway weekend for months, but he knew Eve would spend the whole time dying of nervous anticipation—so he got it out of the way before they left. She has no idea what he said because she was crying too loudly!"
+/>
+
+<Question
+  question="What is Josh and Eve's favourite snack?"
+  options={[
+    "Dairy Milk mini buttons",
+    "Dried mango",
+    "Sharing tub of ice cream in one sitting",
+    "Chunks of feta cheese eaten straight from the fridge like a lunatic"
+  ]}
+  answer={3}
+  explanation="Josh and Eve have weird snacking habits, and neither of them care to self-reflect on this point."
+/>
+
+<Question
+  question="What is Josh and Eve's lifelong aspiration?"
+  options={[
+    "To teach children to play the triangle",
+    "To operate a charity for lazy cats",
+    "To establish a worldwide empire of tiny houses",
+    "To become cheesemongers in Yorkshire"
+  ]}
+  answer={2}
+  explanation="Josh and Eve hope to live a delightfully carefree, childless life in their tiny homes across a range of continents. Josh will do most of the hard work of constructing said tiny homes, and Eve will entertain him by reading him problematic posts on Reddit."
+/>
+
+<Question
+  question="Who is Josh's favourite author?"
+  options={[
+    "Sophie Anderson",
+    "Stephen King",
+    "Terry Pratchett",
+    "J.K. Rowling"
+  ]}
+  answer={0}
+  explanation="Sophie Anderson writes beautiful children's books inspired by Slavic folklore. Josh has read The House with Chicken Legs approximately 47 times."
+/>
+
+</Prose>

@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-aqua: #0299B5;
+  --color-blue: #372874;
+  --color-purple: #8E1456;
+  --color-pink: #E6186D;
+  --color-yellow: #F6A11D;
+}
+
+@utility not-underlined {
+
+  @apply relative decoration-0 decoration-transparent;
+
+  &::after {
+    @apply hidden;
+  }
+}
+
+@utility underlined {
+
+  @apply relative w-[max-content] decoration-0 decoration-transparent;
+  
+
+  &::after {
+    content: '';
+    @apply absolute bottom-0.5 -left-1 -right-1 h-1.5 bg-current/25;
+  }
+}

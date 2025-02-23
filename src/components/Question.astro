@@ -1,0 +1,79 @@
+---
+interface Props {
+  question: string;
+  options: string[];
+  answer: number;
+  explanation: string;
+}
+
+const { question, options, answer, explanation } = Astro.props;
+const id = crypto.randomUUID();
+---
+
+<div
+  id={id}
+  class="not-prose text-white min-h-[300px] perspective-1000 relative transition-transform duration-700 transform-style-3d my-6"
+>
+  <!-- Front side (Question) -->
+  <div class="bg-aqua p-6 absolute w-full h-full backface-hidden rotate-y-0">
+    <div>
+      <h2 class="text-2xl font-bold">{question}</h2>
+      <ol class="list-[upper-alpha] list-inside pl-4">
+        {
+          options.map((option, index) => (
+            <li>
+              <button class="inline hover:text-white/75" data-answer={index}>
+                {option}
+              </button>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+
+  <!-- Back side (Answer) -->
+  <div class="bg-pink p-6 absolute w-full h-full backface-hidden rotate-y-180">
+    <div>
+      <h2 class="text-2xl font-bold">Answer: {options[answer]}</h2>
+      <p>{explanation}</p>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  function initializeQuestionCard() {
+    const card = document.getElementById(id);
+    const answerButtons = card?.querySelectorAll("button[data-answer]");
+
+    answerButtons?.forEach((button) => {
+      button.addEventListener("click", () => {
+        card?.classList.add("rotate-y-180");
+      });
+    });
+  }
+
+  // Initialize on page load
+  initializeQuestionCard();
+
+  document.addEventListener("astro:page-load", initializeQuestionCard);
+</script>
+
+<style>
+  /* These few custom properties aren't available in Tailwind by default */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-0 {
+    transform: rotateY(0deg);
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+</style>
