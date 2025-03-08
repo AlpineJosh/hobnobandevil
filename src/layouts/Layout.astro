@@ -1,5 +1,6 @@
 ---
 const { frontmatter } = Astro.props;
+import { ClientRouter } from 'astro:transitions';
 
 import "../styles/global.css";
 import '@fontsource-variable/quicksand';
@@ -16,6 +17,7 @@ import LogoSvg from '../assets/joshandeve.svg';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{frontmatter.title}</title>
+		<ClientRouter />
 	</head>
 	<body class="min-w-screen min-h-screen flex flex-col items-center pb-12 md:pb-24">
 		<header class="w-full max-w-screen-xl p-6 flex flex-row justify-between items-center md:pr-46">
