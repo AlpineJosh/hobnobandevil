@@ -1,0 +1,21 @@
+{
+  "name": "wedding-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.8",
+    "@fontsource-variable/quicksand": "^5.1.1",
+    "@tailwindcss/vite": "^4.0.2",
+    "astro": "^5.2.3",
+    "tailwindcss": "^4.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16"
+  }
+}
