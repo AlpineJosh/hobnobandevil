@@ -1,26 +1,56 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-quicksand);
+
+  --color-aqua: #0299b5;
+  --color-blue: #372874;
+  --color-purple: #8e1456;
+  --color-pink: #e6186d;
+  --color-yellow: #f6a11d;
+  --color-neutral: #faf5f5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility not-underlined {
+  @apply bg-none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility underlined {
+  @apply decoration-0 decoration-transparent inline;
+
+  --color-underline: currentColor;
+  --underline-color: color-mix(
+    in srgb,
+    var(--color-underline) 25%,
+    transparent
+  );
+  background-image: linear-gradient(
+    transparent 70%,
+    var(--underline-color) 70%,
+    var(--underline-color) 90%,
+    transparent 90%
+  );
+}
+
+@layer base {
+  h1 {
+    @apply font-bold text-2xl text-white px-2 py-1 w-fit mt-2 mb-4;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  h2 {
+    @apply font-bold text-xl underlined leading-relaxed w-fit mt-1 mb-2;
+  }
+
+  h3 {
+    @apply font-bold text-lg leading-relaxed w-fit mt-1 mb-2;
+  }
+
+  p {
+    @apply text-justify mt-0.5 mb-1;
+  }
+
+  a {
+    @apply underlined;
+  }
 }
