@@ -51,7 +51,7 @@ const GettingThere: FC = () => {
 
         <p className="text-purple">
           Halifax Station is helpfully very close to the venue. You can get a
-          direct train there from London King's Cross; it takes about 2.5 hours.
+          direct train there from London King’s Cross; it takes about 2.5 hours.
           For tickets,{" "}
           <Link
             href="https://www.thetrainline.com"
@@ -65,8 +65,8 @@ const GettingThere: FC = () => {
         </p>
 
         <p className="text-purple">
-          Once you're at the station, the easiest thing is to order a taxi: some
-          options are Best Taxis or Crossley Cars, but Uber works here too. It's
+          Once you’re at the station, the easiest thing is to order a taxi: some
+          options are Best Taxis or Crossley Cars, but Uber works here too. It’s
           about 15 minutes to the venue.
         </p>
 
@@ -84,21 +84,21 @@ const GettingThere: FC = () => {
         </p>
 
         <span className="text-blue flex flex-col gap-4">
-          <h2 className="text-purple">If you're flying</h2>
+          <h2 className="text-purple">If you’re flying</h2>
           <p>
-            We're so grateful to our international guests who are making the
+            We’re so grateful to our international guests who are making the
             journey to see us. We want you to feel your best on the day, so if
-            possible, we'd suggest arriving 1-2 days before to settle in.
+            possible, we’d suggest arriving 1-2 days before to settle in.
           </p>
           <p>
             The closest airport is Manchester Airport (MAN), which is about an
-            hour's drive away. You can also take the train from Manchester
-            Airport to Halifax, then grab a taxi from the station (see "by
-            train" above).
+            hour’s drive away. You can also take the train from Manchester
+            Airport to Halifax, then grab a taxi from the station (see “by
+            train” above).
           </p>
           <p>
-            If you're flying into London, it's a bit more of a headache as
-            you'll need to get into central London, then out again. Here's some
+            If you’re flying into London, it’s a bit more of a headache as
+            you’ll need to get into central London, then out again. Here’s some
             guidance on how to make it as simple as possible.
           </p>
 
@@ -108,33 +108,33 @@ const GettingThere: FC = () => {
             take you to St Pancras Station. These trains come very frequently,
             at least every 10 minutes. You can buy tickets if you want, but if
             you have contactless on your phone or credit/debit card you can also
-            just tap in and out at the turnstiles. (Don't take the Gatwick
-            Express—it will take you to another part of London and you'll have
-            to catch the Tube from there.) You'll be on the Thameslink for about
+            just tap in and out at the turnstiles. (Don’t take the Gatwick
+            Express—it will take you to another part of London and you’ll have
+            to catch the Tube from there.) You’ll be on the Thameslink for about
             an hour.
           </p>
           <p>
             Get off at St Pancras, grab a snack if you want, then leave the
-            station and go across the street to King's Cross station (they are
+            station and go across the street to King’s Cross station (they are
             next to each other but not in the same building). This is where
-            you'll catch the train to Halifax (see "by train" above).
+            you’ll catch the train to Halifax (see “by train” above).
           </p>
 
           <h3 className="text-aqua">From Heathrow</h3>
           <p>
-            Take the Piccadilly Line from the airport to King's Cross St
+            Take the Piccadilly Line from the airport to King’s Cross St
             Pancras. This should take about an hour. From there, you can catch
-            your train to Halifax (see "by train" above).
+            your train to Halifax (see “by train” above).
           </p>
 
           <h3 className="text-yellow">From Stansted</h3>
           <p>
-            Don't go into London at all. Instead, take the CrossCountry Railway
+            Don’t go into London at all. Instead, take the CrossCountry Railway
             service north to Peterborough, which takes about 90 minutes. At
             Peterborough you can then catch a train to Halifax. (Grand Central
             Railway does run some direct trains between Halifax and
-            Peterborough, so it's a good idea to look for those, but most of the
-            time you'll have to change at Leeds.)
+            Peterborough, so it’s a good idea to look for those, but most of the
+            time you’ll have to change at Leeds.)
           </p>
 
           <p>
@@ -150,8 +150,8 @@ const GettingThere: FC = () => {
               TheTrainline.com
             </Link>
             . Prices tend to be transparent and consistent, but definitely go up
-            closer to the date. If you know you need to take a train, it's a
-            good idea to book your tickets about a month in advance. If you'd
+            closer to the date. If you know you need to take a train, it’s a
+            good idea to book your tickets about a month in advance. If you’d
             like some help planning your journey, just drop us a line!
           </p>
         </span>
