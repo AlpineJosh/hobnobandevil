@@ -36,7 +36,7 @@ export default function HomePage() {
         <p className="text-2xl text-blue">2:30pm - Midnight*</p>
       </div>
       <div className="col-start-6 col-span-6 text-aqua">
-      *Note to our American friends: believe it or not, this is the normal length of a UK wedding. We'll help you get through it, don't worry.
+      *Note to our American friends: believe it or not, this is the normal length of a UK wedding. We’ll help you get through it, don’t worry.
       </div>
     </div>
   );
