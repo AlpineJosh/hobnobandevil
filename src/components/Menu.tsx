@@ -30,7 +30,7 @@ export default function Menu({ active, className }: Props) {
   }, [isOpen]);
 
   return (
-    <div className={`z-10 min-w-content ${className}`}>
+    <div className={`z-10 min-w-content flex flex-row justify-start items-center ${className}`}>
       <button
         aria-label="Open menu"
         aria-expanded={isOpen}
@@ -89,7 +89,7 @@ export default function Menu({ active, className }: Props) {
             onClick={() => setIsOpen(false)}
           >
             <motion.nav
-              className="bg-purple h-full w-[calc(100vw-6rem)] px-12 py-32"
+              className="bg-purple h-full w-[calc(78vw)] px-12 py-32"
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
@@ -97,6 +97,9 @@ export default function Menu({ active, className }: Props) {
               onClick={(e) => e.stopPropagation()}
             >
               <ul className="flex flex-col space-y-10 text-2xl font-semibold text-white">
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
                 <li>
                   <Link href="/wedding">The Wedding</Link>
                 </li>

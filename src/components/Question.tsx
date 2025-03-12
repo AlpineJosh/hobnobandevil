@@ -19,6 +19,21 @@ const colors = {
   aqua: "bg-aqua",
 };
 
+const cardVariants = {
+  flat: {
+    rotateY: 0,
+    scale: [1, 1.1, 1],
+    boxShadow: ["0 20px 30px rgba(0,0,0,0.2)", "0 40px 60px rgba(0,0,0,0.3)", "0 20px 30px rgba(0,0,0,0.2)"],
+    zIndex: [1, 2, 1],
+  },
+  flipping: {
+    rotateY: 180,
+    scale: [1, 1.1, 1],
+    boxShadow: ["0 20px 30px rgba(0,0,0,0.2)", "0 40px 60px rgba(0,0,0,0.3)", "0 20px 30px rgba(0,0,0,0.2)"],
+    zIndex: [1, 2, 1],
+  },
+};
+
 export default function Question({
   question,
   options,
@@ -30,19 +45,25 @@ export default function Question({
 
   return (
     <motion.div
-      initial={false}
-      animate={{ rotateY: isFlipped ? 180 : 0 }}
-      transition={{ duration: 0.7 }}
-      className="grid text-white"
+      initial={isFlipped ? "flipping" : "flat"    }
+      animate={isFlipped ? "flipping" : "flat"}
+      variants={cardVariants}
+      transition={{
+        duration: 1,
+        times: [0, 0.4, 1],
+        stiffness: 400,
+        damping: 30,
+      }}
+      className="grid text-white relative"
       style={{
-        perspective: 1000,
+        perspective: 1500,
         transformStyle: "preserve-3d",
         gridTemplateAreas: '"card"',
       }}
     >
       {/* Front side (Question) */}
       <motion.div
-        className={`${colors[color]} p-6 backface-hidden space-x-2 flex flex-col`}
+        className={`${colors[color]} p-6 backface-hidden flex flex-col`}
         style={{
           transform: "rotateY(0deg)",
           gridArea: "card",
@@ -64,14 +85,16 @@ export default function Question({
 
       {/* Back side (Answer) */}
       <motion.div
-        className={`${colors[color]} p-6 backface-hidden flex flex-col space-x-2`}
+        className={`${colors[color]} p-6 backface-hidden flex flex-col`}
         style={{
           transform: "rotateY(180deg)",
           gridArea: "card",
         }}
       >
-          <h2 className="not-underlined">Answer: {typeof answer === "string" ? answer : options[answer]}</h2>
-          <p>{explanation}</p>
+        <h2 className="not-underlined">
+          Answer: {typeof answer === "string" ? answer : options[answer]}
+        </h2>
+        <p className="mt-4">{explanation}</p>
       </motion.div>
     </motion.div>
   );

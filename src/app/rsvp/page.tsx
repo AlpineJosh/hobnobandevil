@@ -30,8 +30,11 @@ export default function RSVP() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col space-y-4 px-8 py-6">
-      <h2 className="text-pink">Please let us know if you can join us by June 1! Just fill out the form below.</h2>
+    <>
+      <h2 className="text-pink col-span-full">
+        Please let us know if you can join us by June 1! Just fill out the form
+        below.
+      </h2>
       <iframe
         ref={iframeRef}
         data-tally-src="https://tally.so/embed/w2lbA9?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -39,8 +42,8 @@ export default function RSVP() {
         width="100%"
         height={iframeHeight}
         title="RSVP to our wedding!"
-        className="border-none outline-none focus:outline-none"
+        className="border-none outline-none focus:outline-none col-span-full"
       />
-    </div>
+    </>
   );
 }

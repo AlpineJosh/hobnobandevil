@@ -1,23 +1,33 @@
 import Question from "@/components/Question";
-import HeadingPicture from "@/images/Josh-Eve-Quiz.png"
-import YellowSquiggle from "@/images/Yellow-Whirl.png"
+import HeadingPicture from "@/images/Josh-Eve-Quiz.png";
+import YellowSquiggle from "@/images/Yellow-Whirl.png";
 import Image from "next/image";
 
 export default function Quiz() {
   return (
-    <div className="flex flex-col gap-12">
-      <div className="relative w-full max-w-screen-md mx-auto">
-        <Image src={HeadingPicture} alt="Josh and Eve" className="object-cover -mt-20 " />
-        <h1 className="bg-pink absolute top-0 left-0 ">A Quiz</h1>
-      </div>
+    <>
+      <Image
+        src={HeadingPicture}
+        alt="Josh and Eve"
+        className="row-start-1 object-cover -mt-20 col-[3/-3]"
+      />
+      <h1 className="row-start-1 bg-pink col-[3/10] z-10">A Quiz</h1>
+      <div className="relative w-full max-w-screen-md mx-auto"></div>
 
-      <span className="relative text-purple flex flex-col gap-0">
-        <Image src={YellowSquiggle} alt="Yellow Squiggle" className="absolute top-0 -left-60 max-w-72" />
-        <h2 >How well do you know Josh and Eve?</h2>
-        <h2 >Test your knowledge.</h2>
+      <Image
+        src={YellowSquiggle}
+        alt="Yellow Squiggle"
+        className="absolute top-0 -left-60 max-w-72"
+      />
+      <span className="row-start-2 col-[1/10] z-10 text-purple">
+        <h2 className=" text-purple">
+          How well do you know Josh and Eve?
+          <br />
+          Test your knowledge.
+        </h2>
       </span>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-fr">
+      <div className="row-start-4 col-[1/-1] grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-fr">
         <Question
           question="Where did Josh and Eve meet?"
           options={[
@@ -96,6 +106,6 @@ export default function Quiz() {
           color="aqua"
         />
       </div>
-    </div>
+    </>
   );
 }

@@ -22,15 +22,18 @@
   --color-underline: currentColor;
   --underline-color: color-mix(
     in srgb,
-    var(--color-underline) 25%,
+    var(--color-underline) 35%,
     transparent
   );
   background-image: linear-gradient(
-    transparent 70%,
-    var(--underline-color) 70%,
-    var(--underline-color) 90%,
-    transparent 90%
+    transparent calc(50% + 0.2em) ,
+    var(--underline-color) calc(50% + 0.2em),
+    var(--underline-color) calc(50% + 0.5em),
+    transparent calc(50% + 0.5em)
   );
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-repeat: repeat-y;
 }
 
 @layer base {

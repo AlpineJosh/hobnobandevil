@@ -18,17 +18,14 @@ interface LayoutProps {
   active?: "home" | "getting-there" | "sleeping" | "faq" | "quiz" | "rsvp";
 }
 
-
 export default function Layout({ children, active }: LayoutProps) {
-
-
   return (
     <html className={`${quicksand.variable}`}>
-      <body className="bg-neutral min-h-screen">
+      <body className="bg-neutral min-h-screen py-6">
         <Background />
-        <div className="grid grid-cols-12 gap-5 w-full max-w-screen-xl mx-auto">
-          <header className="relative col-span-12 grid grid-cols-12 gap-5 items-center justify-between">
-            <Link href="/" className="col-span-2 sm:m-8 not-underlined">
+        <div className="grid grid-cols-24 w-full max-w-screen-xl mx-auto gap-y-12">
+          <header className="relative col-[1/24] grid grid-cols-subgrid items-center">
+            <Link href="/" className="col-[2/7] sm:col-[1/4] not-underlined">
               <motion.svg
                 key="header-logo"
                 viewBox={SVGPaths.Logo.viewBox}
@@ -54,14 +51,16 @@ export default function Layout({ children, active }: LayoutProps) {
                 />
               </motion.svg>
             </Link>
-            <Menu active={active ?? "home"} className="col-[3/12]" />
+            <Menu active={active ?? "home"} className="col-[-4/-1] sm:col-[4/24]" />
           </header>
-          <main className="bg-white col-start-2 col-span-10 p-4 sm:p-12">
-            {children}
+          <main className="bg-white col-[2/-2] grid grid-cols-subgrid py-6 sm:py-12 isolate z-0 shadow">
+            <div className="col-[2/-2] grid grid-cols-subgrid gap-y-6 sm:gap-y-12 items-start">
+              {children}
+            </div>
           </main>
-          <footer className="col-span-12 text-purple my-24">
+          <footer className="col-[3/-3] text-purple">
             <p className="text-center">
-              Website made by Hobnob, with a lot of encouragement from Evil
+              Website made by Hobnob<br />with a lot of encouragement from Evil
             </p>
           </footer>
         </div>
