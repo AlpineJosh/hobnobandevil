@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: var(--font-quicksand) sans-serif;
+  --font-sans: var(--font-quicksand), sans-serif;
 
   --color-aqua: #0299b5;
   --color-blue: #372874;
