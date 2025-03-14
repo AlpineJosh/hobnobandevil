@@ -1,6 +1,5 @@
 "use client";
 
-import { Quicksand } from "next/font/google";
 import Menu from "../components/Menu";
 import { motion, Variant } from "framer-motion";
 import { SVGPaths } from "../components/SVGPaths";
@@ -8,11 +7,6 @@ import Link from "next/link";
 import { Background } from "@/components/Background";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  variable: "--font-quicksand",
-});
 
 const logoVariants: Record<string, Variant> = {
   initial: {
@@ -135,10 +129,9 @@ export const Layout = ({ children }: LayoutProps) => {
     | "faq"
     | "quiz"
     | "rsvp";
-  console.log(active);
 
   return (
-    <body className={`${quicksand.variable}  bg-neutral min-h-screen py-6`}>
+    <body className={`bg-neutral min-h-screen py-6 font-sans`}>
       <Background />
       <div className="grid grid-cols-24 w-full max-w-screen-xl mx-auto gap-y-12">
         <header className="relative @container col-[1/24] grid grid-cols-subgrid items-center z-10">
