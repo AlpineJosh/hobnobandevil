@@ -4,18 +4,18 @@ import YellowWave from "@/images/Yellow-Wave.png";
 import RaspberryLine from "@/images/Raspberry-Line.png";
 import CakeFork from "@/images/Cake-Fork.png";
 import LetsPlayCocktail from "@/images/Lets-Play-Cocktail.png";
+import { Metadata } from "next";
 
 import Image from "next/image";
 import Link from "next/link";
+export const metadata: Metadata = {
+  title: "Hobnob and Evil | The Wedding",
+};
 export default function Wedding() {
   return (
     <>
       <div className="row-start-1 col-[1/-1]">
-        <Image
-          src={HeadingPicture}
-          alt="Josh and Eve"
-          className="-mt-16"
-        />
+        <Image src={HeadingPicture} alt="Josh and Eve" className="-mt-16" />
       </div>
 
       <h1 className="bg-pink row-start-1 col-[2/-2] z-10">The Wedding</h1>
@@ -84,17 +84,20 @@ export default function Wedding() {
 
       <Image src={RaspberryLine} alt="Raspberry Line" className="col-[3/-3]" />
 
-
       <div className="col-[1/-1] sm:col-[7/-1] text-pink flex flex-col gap-4">
-          <h2>The Aftermath</h2>
-          <p>
-            For anyone who doesn’t have to shoot off first thing on Sunday, come
-            join us at The Cakery, a local brunch spot, from 9:30am to 12pm.
-            Depending on numbers, we’ll either book tables or take over the
-            whole place, so let us know when you RSVP if we should count you in!
-          </p>
-        </div>
-      <Image src={CakeFork} alt="Cake Fork" className="col-[2/-13] sm:col-[2/6]" />
+        <h2>The Aftermath</h2>
+        <p>
+          For anyone who doesn’t have to shoot off first thing on Sunday, come
+          join us at The Cakery, a local brunch spot, from 9:30am to 12pm.
+          Depending on numbers, we’ll either book tables or take over the whole
+          place, so let us know when you RSVP if we should count you in!
+        </p>
+      </div>
+      <Image
+        src={CakeFork}
+        alt="Cake Fork"
+        className="col-[2/-13] sm:col-[2/6]"
+      />
     </>
   );
 }

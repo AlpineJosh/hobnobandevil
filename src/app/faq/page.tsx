@@ -2,6 +2,11 @@ import JoshFAQ from "@/images/Josh-FAQ.png";
 import EveFAQ from "@/images/Eve-FAQ.png";
 
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hobnob and Evil | FAQ",
+}
 
 export default function FAQ() {
   return (

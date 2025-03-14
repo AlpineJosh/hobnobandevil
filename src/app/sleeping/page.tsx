@@ -6,7 +6,11 @@ import RaspberryWhirl from "@/images/Raspberry-Whirl-Flip.png";
 import Zzz from "@/images/Zzz.png";
 import BlueTwistLine from "@/images/Blue-Whirl.png";
 import BlueWave from "@/images/Blue-Wave.png";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Hobnob and Evil | Sleeping Arrangements",
+}
 interface Accommodation {
   name: string;
   url: string;

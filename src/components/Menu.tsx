@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface Props {
-  active: "home" | "getting-there" | "sleeping" | "faq" | "quiz" | "rsvp";
+  active?: "home" | "wedding" | "getting-there" | "sleeping" | "faq" | "quiz" | "rsvp";
   className?: string;
 }
 
@@ -30,7 +30,7 @@ export default function Menu({ active, className }: Props) {
   }, [isOpen]);
 
   return (
-    <div className={`z-10 min-w-content flex flex-row justify-start items-center ${className}`}>
+    <div className={`z-10 min-w-content flex flex-row justify-start sm:justify-end items-center ${className}`}>
       <button
         aria-label="Open menu"
         aria-expanded={isOpen}
@@ -38,43 +38,48 @@ export default function Menu({ active, className }: Props) {
         onClick={() => setIsOpen(!isOpen)}
         className="relative md:hidden z-50"
       >
-        <svg viewBox="0 0 24 24" className="size-12 overflow-visible transform-box-[fill-box]">
-          <motion.rect
-            y="4"
-            width="24"
-            height="2"
-            style={{ originX: '12px', originY: '5px' }}
-            className="fill-yellow"
-            animate={{
-              rotate: isOpen ? 45 : 0,
-              translateY: isOpen ? 3.5 : 0,
-            }}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.rect
-            y="11"
-            width="24"
-            height="2"
-            style={{ originX: '12px', originY: '12px' }}
-            className="fill-pink"
-            animate={{
-              rotate: isOpen ? -45 : 0,
-              translateY: isOpen ? -3.5 : 0,
-            }}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.rect
-            y="18"
-            width="24"
-            height="2"
-            style={{ originX: '12px', originY: '19px' }}
-            className="fill-blue"
-            animate={{
-              translateY: isOpen ? 1 : 0,
-            }}
-            transition={{ duration: 0.3 }}
-          />
-        </svg>
+        <motion.svg 
+          viewBox="0 0 24 24" 
+          className="size-12 overflow-visible transform-box-[fill-box]"
+          variants={{
+            initial: {
+              transition: { staggerChildren: 0.2, duration: 0.6 }
+            },
+            animate: {
+              transition: { staggerChildren: 0.1 }
+            }
+          }}
+          initial="initial"
+          animate="animate"
+        >
+          {[
+            { y: 4, className: "fill-yellow" },
+            { y: 11, className: "fill-pink" },
+            { y: 18, className: "fill-blue" }
+          ].map(({ y, className }, index) => (
+            <motion.rect
+              key={y}
+              y={y}
+              width="24"
+              height="2"
+              style={{ originX: '12px', originY: `${y + 1}px` }}
+              className={className}
+              variants={{
+                initial: {
+                  x: 100,
+                  opacity: 0
+                },
+                animate: {
+                  x: 0,
+                  opacity: 1,
+                  rotate: isOpen && index !== 2 ? (index === 0 ? 45 : -45) : 0,
+                  translateY: isOpen ? (index === 0 ? 3.5 : index === 1 ? -3.5 : 1) : 0
+                }
+              }}
+              transition={{ duration: 0.3 }}
+            />
+          ))}
+        </motion.svg>
       </button>
 
       <AnimatePresence>
@@ -96,29 +101,46 @@ export default function Menu({ active, className }: Props) {
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <ul className="flex flex-col space-y-10 text-2xl font-semibold text-white">
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href="/wedding">The Wedding</Link>
-                </li>
-                <li>
-                  <Link href="/getting-there">Getting There</Link>
-                </li>
-                <li>
-                  <Link href="/sleeping">Sleeping</Link>
-                </li>
-                <li>
-                  <Link href="/faq">FAQs</Link>
-                </li>
-                <li>
-                  <Link href="/quiz">A Quiz</Link>
-                </li>
-                <li>
-                  <Link href="/rsvp">RSVP</Link>
-                </li>
-              </ul>
+              <motion.ul 
+                className="flex flex-col space-y-10 text-2xl font-semibold text-white"
+                variants={{
+                  open: {
+                    transition: {
+                      staggerChildren: 0.1,
+                      delayChildren: 0.2, // Delay after nav slides in
+                    }
+                  },
+                  closed: {
+                    transition: {
+                      staggerChildren: 0.05,
+                      staggerDirection: -1
+                    }
+                  }
+                }}
+                initial="closed"
+                animate="open"
+                exit="closed"
+              >
+                {[
+                  { href: "/", text: "Home" },
+                  { href: "/wedding", text: "The Wedding" },
+                  { href: "/getting-there", text: "Getting There" },
+                  { href: "/sleeping", text: "Sleeping" },
+                  { href: "/faq", text: "FAQs" },
+                  { href: "/quiz", text: "A Quiz" },
+                  { href: "/rsvp", text: "RSVP" },
+                ].map((item) => (
+                  <motion.li
+                    key={item.href}
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: -20 }
+                    }}
+                  >
+                    <Link href={item.href}>{item.text}</Link>
+                  </motion.li>
+                ))}
+              </motion.ul>
             </motion.nav>
           </motion.div>
         )}
@@ -126,68 +148,44 @@ export default function Menu({ active, className }: Props) {
 
       {/* Desktop menu */}
       <nav className="hidden md:block min-w-content">
-        <ul className="min-w-content flex flex-row space-x-8 justify-end text-2xl font-semibold">
-          <li>
-            <Link
-              href="/wedding"
-              className={`md:text-aqua md:hover:underlined ${
-                active === "home" ? "md:underlined" : ""
-              }`}
+        <motion.ul 
+          className="min-w-content flex flex-row space-x-8 justify-end text-2xl font-semibold"
+          variants={{
+            open: {
+              transition: {
+                staggerChildren: 0.1,
+              }
+            }
+          }}
+          initial="closed"
+          animate="open"
+        >
+          {[
+            { href: "/wedding", text: "The Wedding", color: "text-aqua", isActive: active === "wedding" },
+            { href: "/getting-there", text: "Getting There", color: "text-blue", isActive: active === "getting-there" },
+            { href: "/sleeping", text: "Sleeping", color: "text-purple", isActive: active === "sleeping" },
+            { href: "/faq", text: "FAQs", color: "text-pink", isActive: active === "faq" },
+            { href: "/quiz", text: "A Quiz", color: "text-yellow", isActive: active === "quiz" },
+            { href: "/rsvp", text: "RSVP", color: "text-aqua", isActive: active === "rsvp" },
+          ].map((item) => (
+            <motion.li
+              key={item.href}
+              variants={{
+                open: { opacity: 1, y: 0, transition: { duration: 1 } },
+                closed: { opacity: 0, y: -40, transition: { duration: 1 } }
+              }}
             >
-              The Wedding
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/getting-there"
-              className={`md:text-blue md:hover:underlined ${
-                active === "getting-there" ? "md:underlined" : ""
-              }`}
-            >
-              Getting There
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/sleeping"
-              className={`md:text-purple md:hover:underlined ${
-                active === "sleeping" ? "md:underlined" : ""
-              }`}
-            >
-              Sleeping
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/faq"
-              className={`md:text-pink md:hover:underlined ${
-                active === "faq" ? "md:underlined" : ""
-              }`}
-            >
-              FAQs
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/quiz"
-              className={`md:text-yellow md:hover:underlined ${
-                active === "quiz" ? "md:underlined" : ""
-              }`}
-            >
-              A Quiz
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/rsvp"
-              className={`md:text-aqua md:hover:underlined ${
-                active === "rsvp" ? "md:underlined" : ""
-              }`}
-            >
-              RSVP
-            </Link>
-          </li>
-        </ul>
+              <Link
+                href={item.href}
+                className={`${item.color} md:hover:underlined ${
+                  item.isActive ? "md:underlined" : "md:not-underlined"
+                }`}
+              >
+                {item.text}
+              </Link>
+            </motion.li>
+          ))}
+        </motion.ul>
       </nav>
     </div>
   );

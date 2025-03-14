@@ -2,7 +2,11 @@ import Question from "@/components/Question";
 import HeadingPicture from "@/images/Josh-Eve-Quiz.png";
 import YellowSquiggle from "@/images/Yellow-Whirl.png";
 import Image from "next/image";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Hobnob and Evil | Quiz",
+}
 export default function Quiz() {
   return (
     <>

@@ -42,7 +42,7 @@
   }
 
   h2 {
-    @apply font-bold text-xl underlined leading-relaxed w-fit mt-1 mb-2;
+    @apply font-semibold text-xl underlined leading-relaxed w-fit mt-1 mb-2;
   }
 
   h3 {

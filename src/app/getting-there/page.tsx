@@ -1,53 +1,53 @@
 import Link from "next/link";
 import { FC } from "react";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Hobnob and Evil | Getting There",
+}
 const GettingThere: FC = () => {
   return (
-    <div className="mx-auto px-4 -mt-8 relative">
-      <div className="flex flex-row gap-12">
-        <div className="relative w-1/2">
-          <iframe
-            className="-mt-12 left-0 w-full aspect-square"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-1.899942755699158%2C53.675618544198855%2C-1.8932533264160158%2C53.67904390690464&amp;layer=mapnik&amp;marker=53.677334470324844%2C-1.8965953588485718"
-          />
-          <span className="absolute top-0 -left-4">
-            <h1 className="bg-purple">Getting There</h1>
-          </span>
-        </div>
+    <>
+      <iframe
+        className="row-start-1 sm:row-end-5 -mt-12 sm:-mt-18 col-[1/-1] sm:col-[2/10] w-full aspect-square border-8 border-blue rounded-xl"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-1.899942755699158%2C53.675618544198855%2C-1.8932533264160158%2C53.67904390690464&amp;layer=mapnik&amp;marker=53.677334470324844%2C-1.8965953588485718"
+      />
+      <h1 className="bg-purple row-start-1 sm:row-start-2 col-[1/12] -ml-6 sm:-ml-0">
+        Getting There
+      </h1>
 
-        <div>
-          <h2 className="text-yellow">The address</h2>
-          <p className="text-pink text-xl font-semibold">
-            The Venue, Bowers Mill
-            <br />
-            Branch Rd
-            <br />
-            Barkisland
-            <br />
-            Halifax
-            <br />
-            HX4 0AD
-            <br />
-            United Kingdom
-          </p>
+      <h2 className="text-yellow row-start-2 col-[1/-1] sm:col-[11/-1]">
+        The address
+      </h2>
+      <p className="row-start-3 col-[1/-1] sm:col-[11/-1] text-pink text-xl font-semibold">
+        The Venue, Bowers Mill
+        <br />
+        Branch Rd
+        <br />
+        Barkisland
+        <br />
+        Halifax
+        <br />
+        HX4 0AD
+        <br />
+        United Kingdom
+      </p>
 
-          <h2 className="text-yellow">What3words</h2>
-          <p className="text-pink">
-            <Link
-              href="https://what3words.com/award.words.rather"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl font-bold"
-            >
-              &#47;&#47;&#47;award.words.rather
-            </Link>
-          </p>
-        </div>
-      </div>
-      <div className="flex flex-col gap-4 mt-12">
-        <div className="relative">
-          <h2 className="text-purple">By train</h2>
-        </div>
+      <h2 className="text-yellow row-start-4 col-[1/-1] sm:col-[11/-1]">
+        What3words
+      </h2>
+      <p className="row-start-5 col-[1/-1] sm:col-[11/-1] text-pink">
+        <Link
+          href="https://what3words.com/award.words.rather"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xl font-bold"
+        >
+          &#47;&#47;&#47;award.words.rather
+        </Link>
+      </p>
+      <div className="row-start-6 col-[1/-1] sm:col-[2/-2] flex flex-col gap-4">
+        <h2 className="text-purple">By train</h2>
 
         <p className="text-purple">
           Halifax Station is helpfully very close to the venue. You can get a
@@ -71,9 +71,11 @@ const GettingThere: FC = () => {
         </p>
 
         <h2 className="text-pink">By car</h2>
-        <p className="text-pink">
-          For those driving, the best way to get here is via the M62:
-          <ul>
+        <span className="text-pink">
+          <p className="text-pink">
+            For those driving, the best way to get here is via the M62:
+          </p>
+          <ul className="list-disc list-inside ml-8">
             <li>Exit at Junction 24 for Halifax/Huddersfield.</li>
             <li>Follow signs for Halifax, then Barkisland.</li>
             <li>
@@ -81,8 +83,7 @@ const GettingThere: FC = () => {
               on-site.
             </li>
           </ul>
-        </p>
-
+        </span>
         <span className="text-blue flex flex-col gap-4">
           <h2 className="text-purple">If you’re flying</h2>
           <p>
@@ -156,7 +157,7 @@ const GettingThere: FC = () => {
           </p>
         </span>
       </div>
-    </div>
+    </>
   );
 };
 
