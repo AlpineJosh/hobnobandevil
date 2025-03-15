@@ -23,7 +23,7 @@ export default function FAQ() {
       />
       <h1 className="bg-aqua row-start-1 col-[10/-1] z-10">Frequently Asked Questions</h1>
 
-      <div className="[&>h2]:text-pink flex flex-col gap-4 col-[2/-2]">
+      <div className="[&>h2]:text-pink [&>h2]:leading-16 text-purple last:[&>*]:mb-0 col-[1/-1]">
 
         <h2>What time should I arrive on the day?</h2>
         <p>

@@ -17,7 +17,7 @@
 }
 
 @utility underlined {
-  @apply decoration-0 decoration-transparent inline;
+  @apply decoration-0 decoration-transparent inline-block;
 
   --color-underline: currentColor;
   --underline-color: color-mix(
