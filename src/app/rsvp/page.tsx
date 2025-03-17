@@ -31,12 +31,12 @@ export default function RSVP() {
 
   return (
     <>
-    <div className="row-start-1 col-[1/-1]">
-      <h2 className="text-pink">
-        Please let us know if you can join us by June 1! Just fill out the form
-        below.
-      </h2>
-    </div>
+      <div className="row-start-1 col-[1/-1]">
+        <h2 className="text-pink">
+          Please let us know by June 1 if you can join us! Just fill out the
+          form below.
+        </h2>
+      </div>
       <iframe
         ref={iframeRef}
         data-tally-src="https://tally.so/embed/w2lbA9?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"

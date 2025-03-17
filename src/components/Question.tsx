@@ -95,6 +95,9 @@ export default function Question({
           Answer: {typeof answer === "string" ? answer : options[answer]}
         </h2>
         <p className="mt-4">{explanation}</p>
+        <button onClick={() => setIsFlipped(false)} className="mt-auto text-white self-end hover:text-white/75">
+          &lsaquo; Back
+        </button>
       </motion.div>
     </motion.div>
   );

@@ -4,39 +4,36 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Hobnob and Evil | Getting There",
-}
+};
 const GettingThere: FC = () => {
   return (
     <>
       <iframe
-        className="row-start-1 sm:row-end-5 -mt-12 sm:-mt-18 col-[1/-1] sm:col-[2/10] w-full aspect-square border-8 border-blue rounded-xl"
+        className="row-start-1 sm:row-end-4 -mt-12 sm:-mt-18 col-[1/-1] sm:col-[2/10] w-full aspect-square border-8 border-blue rounded-xl"
         src="https://www.openstreetmap.org/export/embed.html?bbox=-1.899942755699158%2C53.675618544198855%2C-1.8932533264160158%2C53.67904390690464&amp;layer=mapnik&amp;marker=53.677334470324844%2C-1.8965953588485718"
       />
-      <h1 className="bg-purple row-start-1 sm:row-start-2 col-[1/12] -ml-6 sm:-ml-0">
+      <h1 className="bg-purple row-start-1 sm:row-start-2 col-[1/12] -ml-6 sm:-ml-0 z-10">
         Getting There
       </h1>
 
-      <h2 className="text-yellow row-start-2 col-[1/-1] sm:col-[11/-1]">
-        The address
-      </h2>
-      <p className="row-start-3 col-[1/-1] sm:col-[11/-1] text-pink text-xl font-semibold">
-        The Venue, Bowers Mill
-        <br />
-        Branch Rd
-        <br />
-        Barkisland
-        <br />
+      <span className="row-start-2 col-[1/-1] sm:col-[11/-1] flex flex-col gap-2">
+        <h2 className="text-yellow">The address</h2>
+        <p className="text-pink text-xl font-semibold">
+          The Venue Bowers Mill
+          <br />
+          Branch Rd
+          <br />
+          Barkisland
+          <br />
         Halifax
-        <br />
-        HX4 0AD
-        <br />
-        United Kingdom
-      </p>
+          <br />
+          HX4 0AD
+          <br />
+          United Kingdom
+        </p>
 
-      <h2 className="text-yellow row-start-4 col-[1/-1] sm:col-[11/-1]">
-        What3words
-      </h2>
-      <p className="row-start-5 col-[1/-1] sm:col-[11/-1] text-pink">
+        <h2 className="text-yellow">What3words</h2>
+      <p className="row-start-3 col-[1/-1] sm:col-[11/-1] text-pink">
         <Link
           href="https://what3words.com/award.words.rather"
           target="_blank"
@@ -46,7 +43,8 @@ const GettingThere: FC = () => {
           &#47;&#47;&#47;award.words.rather
         </Link>
       </p>
-      <div className="row-start-6 col-[1/-1] sm:col-[2/-2] flex flex-col gap-4">
+      </span>
+      <div className="row-start-4 col-[1/-1] sm:col-[2/-2] flex flex-col gap-4">
         <h2 className="text-purple">By train</h2>
 
         <p className="text-purple">
@@ -66,8 +64,25 @@ const GettingThere: FC = () => {
 
         <p className="text-purple">
           Once you’re at the station, the easiest thing is to order a taxi: some
-          options are Best Taxis or Crossley Cars, but Uber works here too. It’s
-          about 15 minutes to the venue.
+          options are{" "}
+          <Link
+            href="https://www.google.com/localservices/prolist?spp=CgsvZy8xdGg1YzNycg%3D%3D&source=sh/x/loc/srv/m1/0&kgs=3fbd045c51c12314&src=2&slp=UhMIARIPEg0iCy9nLzF0aDVjM3Jy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink"
+          >
+            Best Taxis
+          </Link>{" "}
+          or{" "}
+          <Link
+            href="https://www.google.com/localservices/prolist?spp=Cg0vZy8xMWM0NXI0em42&source=sh/x/loc/srv/m1/0&kgs=5e3f618843c31939&src=2&slp=UhUIARIREg8iDS9nLzExYzQ1cjR6bjY"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink"
+          >
+            Crossley Cars
+          </Link>
+          , but Uber works here too. It’s about 15 minutes to the venue.
         </p>
 
         <h2 className="text-pink">By car</h2>

@@ -116,8 +116,8 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  const [animationStep, setAnimationStep] = useState("j");
-  const [moveToPosition, setMoveToPosition] = useState(false);
+  const [animationStep, setAnimationStep] = useState("josheve");
+  const [moveToPosition, setMoveToPosition] = useState(true);
 
   const pathname = usePathname();
 
@@ -134,7 +134,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <body className={`bg-neutral min-h-screen py-6 font-sans`}>
       <Background />
       <div className="grid grid-cols-24 w-full max-w-screen-xl mx-auto gap-y-12">
-        <header className="relative @container/header col-[1/24] grid grid-cols-24 items-center z-10">
+        <header className="relative @container/header col-[1/-1] grid grid-cols-24 items-center z-10 mx-4">
           <Link href="/" className="col-[2/7] sm:col-[1/4] not-underlined">
             <motion.svg
               key="header-logo"

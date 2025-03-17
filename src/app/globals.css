@@ -17,7 +17,7 @@
 }
 
 @utility underlined {
-  @apply decoration-0 decoration-transparent inline-block;
+  @apply decoration-0 decoration-transparent inline relative;
 
   --color-underline: currentColor;
   --underline-color: color-mix(
@@ -26,6 +26,7 @@
     transparent
   );
   background-image: linear-gradient(
+    to bottom,
     transparent calc(50% + 0.2em) ,
     var(--underline-color) calc(50% + 0.2em),
     var(--underline-color) calc(50% + 0.5em),
@@ -33,7 +34,7 @@
   );
   background-size: 100% 100%;
   background-position: 0 0;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
 
 @layer base {
@@ -50,7 +51,7 @@
   }
 
   p {
-    @apply text-justify mt-0.5 mb-1;
+    @apply mt-0.5 mb-1;
   }
 
   a {

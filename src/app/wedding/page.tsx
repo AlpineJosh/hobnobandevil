@@ -57,8 +57,8 @@ export default function Wedding() {
         <p>Food, games and mingling</p>
         <h2>5:00pm</h2>
         <p>Dinner is served</p>
-        <h2>7:00pm</h2>
-        <p>Dancing (and/or recharging)</p>
+        <h2>7:30pm</h2>
+        <p>Dancing (or recharging)</p>
         <h2>9:30pm</h2>
         <p>Pub quiz and prizes</p>
       </div>
@@ -88,7 +88,7 @@ export default function Wedding() {
         <h2>The Aftermath</h2>
         <p>
           For anyone who doesn’t have to shoot off first thing on Sunday, come
-          join us at The Cakery, a local brunch spot, from 9:30am to 12pm.
+          join us at <Link href="https://thecakerywestyorkshire.co.uk/" className="text-pink">The Cakery</Link>, a local brunch spot, from 9:30am to 12pm.
           Depending on numbers, we’ll either book tables or take over the whole
           place, so let us know when you RSVP if we should count you in!
         </p>

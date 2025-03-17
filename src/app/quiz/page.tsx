@@ -18,12 +18,12 @@ export default function Quiz() {
       <h1 className="row-start-1 bg-pink col-[3/10] z-10">A Quiz</h1>
       <div className="relative w-full max-w-screen-md mx-auto"></div>
 
-      <Image
+      {/* <Image
         src={YellowSquiggle}
         alt="Yellow Squiggle"
         className="absolute top-0 -left-60 max-w-72"
-      />
-      <span className="row-start-2 col-[1/10] z-10 text-purple">
+      /> */}
+      <span className="row-start-2 col-[1/-1] z-10 text-purple">
         <h2 className=" text-purple">
           How well do you know Josh and Eve?
           <br />
@@ -48,13 +48,13 @@ export default function Quiz() {
         <Question
           question="Who is 'baby angel'?"
           options={[
-            "One of Eve's cats",
+            "One of our cats",
             "Josh when he's done something nice",
             "A creature called a potto",
             "Eve's sister Darcie",
           ]}
           answer={0}
-          explanation="Josh and Eve have three pets: Tilly the Australian Shepherd, and Disaster and Calamity, both Ragdoll cats. Tilly goes by 'Princess', Calamity is 'baby angel', and Disaster is 'asshole' (because he is one)."
+          explanation="Josh and Eve have three pets: Tilly the Australian Shepherd, and Disaster and Calamity, both Ragdoll cats. Tilly, the Regina George of dogs, goes by “Princess”; Calamity, who is a perfect darling, goes by “Baby Angel.” Disaster goes by “Asshole,” because he's an asshole."
           color="purple"
         />
 
@@ -67,16 +67,16 @@ export default function Quiz() {
             "After a 17-course meal at a restaurant in Hounslow",
           ]}
           answer={1}
-          explanation="Josh had been planning his proposal as a part of a getaway weekend for months, but he knew Eve would spend the whole time dying of nervous anticipation — so he got it out of the way before they left. She has no idea what he said because she was crying too loudly!"
+          explanation="Josh had been planning his proposal as a part of a getaway weekend for months, but he knew Eve would spend the whole time dying of nervous anticipation—so he got it out of the way before they left. She has no idea what he said because she was crying too loudly (with happiness!!)."
           color="yellow"
         />
 
         <Question
           question="What is Josh and Eve's favourite snack?"
           options={[
-            "Dairy Milk mini buttons",
+            "Dairy Milk mint buttons",
             "Dried mango",
-            "Sharing tub of ice cream in one sitting",
+            "A whole tub of ice cream in one sitting",
             "Chunks of feta cheese eaten straight from the fridge like a lunatic",
           ]}
           answer={"Any"}

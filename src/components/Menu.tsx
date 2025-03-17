@@ -36,7 +36,7 @@ export default function Menu({ active, className }: Props) {
         aria-expanded={isOpen}
         aria-controls="main-menu"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative md:hidden z-50"
+        className="relative lg:hidden z-50"
       >
         <motion.svg 
           viewBox="0 0 24 24" 
@@ -86,7 +86,7 @@ export default function Menu({ active, className }: Props) {
         {isOpen && (
           <motion.div
             id="main-menu"
-            className="z-30 fixed inset-0 h-screen w-screen md:hidden"
+            className="z-30 fixed inset-0 h-screen w-screen lg:hidden"
             initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
             animate={{ backgroundColor: "rgba(255, 255, 255, 1)" }}
             exit={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
@@ -147,7 +147,7 @@ export default function Menu({ active, className }: Props) {
       </AnimatePresence>
 
       {/* Desktop menu */}
-      <nav className="hidden md:block min-w-content">
+      <nav className="hidden lg:block min-w-content">
         <motion.ul 
           className="min-w-content flex flex-row space-x-8 justify-end text-2xl font-semibold"
           variants={{
@@ -177,8 +177,8 @@ export default function Menu({ active, className }: Props) {
             >
               <Link
                 href={item.href}
-                className={`${item.color} md:hover:underlined ${
-                  item.isActive ? "md:underlined" : "md:not-underlined"
+                className={`${item.color} lg:hover:underlined ${
+                  item.isActive ? "lg:underlined" : "lg:not-underlined"
                 }`}
               >
                 {item.text}

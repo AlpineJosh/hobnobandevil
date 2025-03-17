@@ -3,10 +3,11 @@ import EveFAQ from "@/images/Eve-FAQ.png";
 
 import Image from "next/image";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Hobnob and Evil | FAQ",
-}
+};
 
 export default function FAQ() {
   return (
@@ -14,17 +15,18 @@ export default function FAQ() {
       <Image
         src={EveFAQ}
         alt="Josh and Eve"
-        className="row-start-1 col-[1/12] object-cover -translate-x-1/4 -translate-y-1/8"
+        className="row-start-1 col-[1/12] object-cover -translate-x-1/4 -translate-y-1/8 hidden sm:block"
       />
       <Image
         src={JoshFAQ}
         alt="Josh and Eve"
-        className="row-start-1 col-[10/20] object-cover translate-x-1/8 -translate-y-1/16"
+        className="row-start-1 col-[10/20] object-cover translate-x-1/8 -translate-y-1/16 hidden sm:block"
       />
-      <h1 className="bg-aqua row-start-1 col-[10/-1] z-10">Frequently Asked Questions</h1>
+      <div className="row-start-1 col-[1/-1] sm:col-[10/-1] z-10">
+        <h1 className="bg-aqua inline">Frequently Asked Questions</h1>
+      </div>
 
-      <div className="[&>h2]:text-pink [&>h2]:leading-16 text-purple last:[&>*]:mb-0 col-[1/-1]">
-
+      <div className="[&>h2]:text-pink space-y-6 text-purple col-[1/-1]">
         <h2>What time should I arrive on the day?</h2>
         <p>
           Please plan to arrive between 2 and 2:15pm so we can get everyone
@@ -101,26 +103,60 @@ export default function FAQ() {
         <p>
           We know how expensive weddings can be to attend, and we’re just happy
           you’re able to join us. If giving a gift feels important to you, you
-          can contribute to our Empty Post-Wedding Bank Accounts Honeymoon Fund
-          here. We’ll also have a place for cards at the venue if that’s more
-          your thing.
+          can contribute to our{" "}
+          <span className="line-through">Empty Post-Wedding Bank Accounts</span>{" "}
+          Honeymoon Fund{" "}
+          <Link
+            href="https://www.paypal.com/paypalme/hobnobandevil"
+            className="text-pink"
+          >
+            here
+          </Link>
+          . We’ll also have a place for cards at the venue if that’s more your
+          thing.
         </p>
 
         <h2>I’m arriving early/staying an extra day. What can I do nearby?</h2>
         <p>
           Awesome! West Yorkshire is absolutely beautiful, so we recommend
           taking a country walk if the weather is nice. You can find some good
-          trails here. Halifax itself also has some cool sites, including Piece
-          Hall and, randomly, the “world’s tallest folly.” If you’re willing to
-          travel a little farther, we’d wholeheartedly suggest taking the train
-          to York, which is a gorgeous medieval town with loads of shops and
-          pretty streets, plus a truly unhinged museum.
+          trails{" "}
+          <Link
+            href="https://www.alltrails.com/en-gb/england/west-yorkshire/halifax/walking"
+            className="text-pink"
+          >
+            here
+          </Link>
+          . Halifax itself also has some cool sites, including
+          <Link
+            href="https://www.atlasobscura.com/places/piece-hall"
+            className="text-pink"
+          >
+            Piece Hall
+          </Link>{" "}
+          and, randomly, the “
+          <Link
+            href="https://www.atlasobscura.com/places/wainhouse-tower"
+            className="text-pink"
+          >
+            world’s tallest folly
+          </Link>
+          .” If you’re willing to travel a little farther, we’d wholeheartedly
+          suggest taking the train to York, which is a gorgeous medieval town
+          with loads of shops and pretty streets, plus{" "}
+          <Link
+            href="https://www.jorvikvikingcentre.co.uk/"
+            className="text-pink"
+          >
+            a truly unhinged museum
+          </Link>
+          .
         </p>
 
         <h2>I have another question.</h2>
         <p>
           We’re here to help! Email us{" "}
-          <a className="text-pink" href="mailto:eve.binder@gmail.com">
+          <a className="text-pink" href="mailto:eve.binder@gmail.com,josh@hobson.io">
             here
           </a>
           .
