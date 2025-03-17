@@ -1,6 +1,5 @@
 import Question from "@/components/Question";
 import HeadingPicture from "@/images/Josh-Eve-Quiz.png";
-import YellowSquiggle from "@/images/Yellow-Whirl.png";
 import Image from "next/image";
 import { Metadata } from "next";
 

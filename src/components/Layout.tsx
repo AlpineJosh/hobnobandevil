@@ -116,8 +116,8 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  const [animationStep, setAnimationStep] = useState("josheve");
-  const [moveToPosition, setMoveToPosition] = useState(true);
+  const [animationStep, setAnimationStep] = useState("j");
+  const [moveToPosition, setMoveToPosition] = useState(false);
 
   const pathname = usePathname();
 

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import JoshAndEve from "@/images/Josh-and-Eve.png";
-import BlueRing from "@/images/Blue-Ring.png";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
