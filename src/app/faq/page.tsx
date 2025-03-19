@@ -44,7 +44,7 @@ export default function FAQ() {
         <h2>What’s the dress code?</h2>
         <p>
           Party clothes! If you’re like us, you probably spend a lot of time in
-          “athleisure”, aka PJs and slippers. This is your chance to dust off
+          “athleisure,” aka PJs and slippers. This is your chance to dust off
           those old suits and dancing shoes. To us that means
           cocktail/semi-formal attire for ladies, dress shirts and trousers at
           minimum for guys. Just make sure you’re comfortable moving around and
@@ -82,9 +82,12 @@ export default function FAQ() {
         <p>
           Go for it. We don’t use it much ourselves so any social coverage will
           need to come from you anyway. Feel free to tag Eve on Instagram at{" "}
-          <a className="text-pink" href="https://www.instagram.com/evebinder">
+          <Link
+            className="text-aqua"
+            href="https://www.instagram.com/evebinder"
+          >
             @evebinder
-          </a>{" "}
+          </Link>{" "}
           (Josh doesn’t have social media).
         </p>
 
@@ -108,7 +111,7 @@ export default function FAQ() {
           Honeymoon Fund{" "}
           <Link
             href="https://www.paypal.com/paypalme/hobnobandevil"
-            className="text-pink"
+            className="text-aqua"
           >
             here
           </Link>
@@ -123,21 +126,21 @@ export default function FAQ() {
           trails{" "}
           <Link
             href="https://www.alltrails.com/en-gb/england/west-yorkshire/halifax/walking"
-            className="text-pink"
+            className="text-aqua"
           >
             here
           </Link>
-          . Halifax itself also has some cool sites, including
+          . Halifax itself also has some cool sites, including{" "}
           <Link
             href="https://www.atlasobscura.com/places/piece-hall"
-            className="text-pink"
+            className="text-aqua"
           >
             Piece Hall
           </Link>{" "}
           and, randomly, the “
           <Link
             href="https://www.atlasobscura.com/places/wainhouse-tower"
-            className="text-pink"
+            className="text-aqua"
           >
             world’s tallest folly
           </Link>
@@ -146,7 +149,7 @@ export default function FAQ() {
           with loads of shops and pretty streets, plus{" "}
           <Link
             href="https://www.jorvikvikingcentre.co.uk/"
-            className="text-pink"
+            className="text-aqua"
           >
             a truly unhinged museum
           </Link>
@@ -156,9 +159,12 @@ export default function FAQ() {
         <h2>I have another question.</h2>
         <p>
           We’re here to help! Email us{" "}
-          <a className="text-pink" href="mailto:eve.binder@gmail.com,josh@hobson.io">
+          <Link
+            className="text-aqua"
+            href="mailto:eve.binder@gmail.com,josh@hobson.io"
+          >
             here
-          </a>
+          </Link>
           .
         </p>
       </div>

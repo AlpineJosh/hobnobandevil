@@ -9,7 +9,7 @@ const GettingThere: FC = () => {
   return (
     <>
       <iframe
-        className="row-start-1 sm:row-end-4 -mt-12 sm:-mt-18 col-[1/-1] sm:col-[2/10] w-full aspect-square border-8 border-blue rounded-xl"
+        className="row-start-1 sm:row-end-4 col-[1/-1] sm:col-[2/10] w-full aspect-square border-8 border-blue rounded-xl"
         src="https://www.openstreetmap.org/export/embed.html?bbox=-1.899942755699158%2C53.675618544198855%2C-1.8932533264160158%2C53.67904390690464&amp;layer=mapnik&amp;marker=53.677334470324844%2C-1.8965953588485718"
       />
       <h1 className="bg-purple row-start-1 sm:row-start-2 col-[1/12] -ml-6 sm:-ml-0 z-10">

@@ -81,6 +81,13 @@ export default function Question({
             </li>
           ))}
         </ol>
+
+        <button
+          onClick={() => setIsFlipped(true)}
+          className="mt-auto text-white self-end hover:text-white/75"
+        >
+          Answer &rsaquo; 
+        </button>
       </motion.div>
 
       {/* Back side (Answer) */}

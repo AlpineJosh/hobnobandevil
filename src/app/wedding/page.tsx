@@ -31,10 +31,13 @@ export default function Wedding() {
         </p>
 
         <p>
-          All events on the day, from the ceremony to reception, will be held at
-          the mill. For details on getting there and where to stay, please see{" "}
-          <Link className="text-pink" href="/sleeping">
-            Sleeping Arrangements
+          For details on getting there, see{" "}
+          <Link href="/getting-there" className="text-pink">
+            here
+          </Link>
+          . For more on where to stay, see{" "}
+          <Link href="/sleeping" className="text-pink">
+            here
           </Link>
           .
         </p>
@@ -88,9 +91,16 @@ export default function Wedding() {
         <h2>The Aftermath</h2>
         <p>
           For anyone who doesn’t have to shoot off first thing on Sunday, come
-          join us at <Link href="https://thecakerywestyorkshire.co.uk/" className="text-pink">The Cakery</Link>, a local brunch spot, from 9:30am to 12pm.
-          Depending on numbers, we’ll either book tables or take over the whole
-          place, so let us know when you RSVP if we should count you in!
+          join us at{" "}
+          <Link
+            href="https://thecakerywestyorkshire.co.uk/"
+            className="text-pink"
+          >
+            The Cakery
+          </Link>
+          , a local brunch spot, from 9:30am to 12pm. Depending on numbers,
+          we’ll either book tables or take over the whole place, so let us know
+          when you RSVP if we should count you in!
         </p>
       </div>
       <Image

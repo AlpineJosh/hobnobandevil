@@ -87,7 +87,7 @@ const SleepingPage: FC = () => {
         alt="Blue Twist Line"
         className="row-start-1 col-[-5/-1] translate-x-4/5 -translate-y-1/2 place-self-start"
       />
-      <h1 className="bg-pink row-start-1 sm:col-[-9/-2] col-[-14/-2]">Sleeping Arrangements</h1>
+      <h1 className="bg-pink row-start-1 sm:col-[-9/-2] col-[2/-2] place-self-end sm:place-self-auto z-10">Sleeping Arrangements</h1>
 
       <p className="row-start-2 col-[2/-2]  text-aqua">
         There are loads of hotels and B&Bs near the venue at a range of price

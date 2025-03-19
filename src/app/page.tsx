@@ -33,7 +33,7 @@ export default function HomePage() {
           wait to finally celebrate with our nearest and dearest.
         </p>
         <Link
-          className="bg-yellow text-lg text-white px-4 py-2 rounded-md not-underlined font-semibold hover:bg-yellow/80 mx-auto block w-32 text-center"
+          className="bg-yellow text-xl text-white px-4 py-3 not-underlined font-semibold hover:bg-yellow/80 mx-auto block w-40 text-center"
           href="/rsvp"
         >
           <span className="underlined">RSVP here</span>
