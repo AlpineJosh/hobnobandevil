@@ -105,7 +105,7 @@ export default function Quiz() {
             "Some guy named Brandon Sanderson",
           ]}
           answer={3}
-          explanation="Answer: D. Brandon Sanderson is an incredibly popular fantasy writer who has written over 70 books. Eve does not know the answer to this question."
+          explanation="Brandon Sanderson is an incredibly popular fantasy writer who has written over 70 books. Eve does not know the answer to this question."
           color="aqua"
         />
       </div>

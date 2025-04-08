@@ -98,7 +98,7 @@ export default function FAQ() {
           through, we’ll have spaces available for “recharge time”: reading,
           answering texts, joining Eve’s dad on the couch for a nap, whatever
           you want. We’ll also have lots of games that you can play either with
-          others on your own. Just try to stick around until the pub quiz,
+          others or on your own. Just try to stick around until the pub quiz,
           because you might win a prize!
         </p>
 
